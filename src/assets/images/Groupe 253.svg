@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="91" height="89" viewBox="0 0 91 89">
+  <defs>
+    <filter id="Ellipse_1" x="0" y="0" width="91" height="89" filterUnits="userSpaceOnUse">
+      <feOffset dy="8" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="7.5" result="blur"/>
+      <feFlood flood-color="#727c8e" flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_253" data-name="Groupe 253" transform="translate(-265.5 -626.5)">
+    <g transform="matrix(1, 0, 0, 1, 265.5, 626.5)" filter="url(#Ellipse_1)">
+      <ellipse id="Ellipse_1-2" data-name="Ellipse 1" cx="23" cy="22" rx="23" ry="22" transform="translate(22.5 14.5)" fill="#fff"/>
+    </g>
+    <path id="Icon_feather-message-circle" data-name="Icon feather-message-circle" d="M25.11,14.232a9.6,9.6,0,0,1-1.03,4.351,9.732,9.732,0,0,1-8.7,5.381,9.6,9.6,0,0,1-4.351-1.03L4.5,25.11l2.175-6.526a9.6,9.6,0,0,1-1.03-4.351,9.732,9.732,0,0,1,5.381-8.7A9.6,9.6,0,0,1,15.377,4.5h.572a9.709,9.709,0,0,1,9.16,9.16Z" transform="translate(296.095 647.568)" fill="none" stroke="#ba9964" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/>
+  </g>
+</svg>
