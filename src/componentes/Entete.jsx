@@ -10,7 +10,6 @@ import {
     Text,
     Menu,
     Tabs,
-    Burger,
     ScrollArea,
     Drawer,
     Divider,
@@ -27,7 +26,6 @@ import {
     IconStar,
     IconMessage,
     IconSettings,
-    IconPlayerPause,
     IconTrash,
     IconSwitchHorizontal,
     IconChevronDown,
@@ -198,7 +196,6 @@ function Entete(props) {
     const { user, tabs } = data;
 
     const { classes, theme, cx } = useStyles();
-    const [opened, { toggle }] = useDisclosure(false);
     const [userMenuOpened, setUserMenuOpened] = useState(false);
 
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);

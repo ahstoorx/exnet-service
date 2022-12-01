@@ -6,3 +6,7 @@
 .swiper-button-next,.swiper-button-prev{
   color:'white',
 }
+
+.buttonhover:hover{
+  cursor: pointer;
+}

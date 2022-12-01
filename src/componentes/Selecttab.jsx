@@ -1,15 +1,15 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
-import SwipeableViews from 'react-swipeable-views';
 import { useTheme } from '@mui/material/styles';
 import AppBar from '@mui/material/AppBar';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
-import couleur from './../assets/other/ExnetColor'
 import TousElement from './TousElement';
-import { Divider } from '@mui/material';
+import AmoiElement from './AmoiElement';
+import DemoiElement from './DemoiElement';
+import Surveillez from './Surveillez';
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -52,9 +52,7 @@ export default function Selecttab() {
     setValue(newValue);
   };
 
-  const handleChangeIndex = (index) => {
-    setValue(index);
-  };
+
 
   return (
     <Box sx={{ bgcolor: 'background.paper', width: '100%',position:'absolute',marginTop:'80px',bottom:'auto',top:50,marginBottom:'90px' }}>
@@ -74,30 +72,36 @@ export default function Selecttab() {
           <Tab label="Surveiller" {...a11yProps(3)} />
         </Tabs>
       </AppBar>
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
-        style={{paddingBottom: '25px',paddingTop:'0px'}}
-      >
+      
         <TabPanel value={value} index={0} dir={theme.direction}>
           {[...Array(10).keys()].map(item => (
               <TousElement />
           ))
 
           }
-
         </TabPanel>
         <TabPanel value={value} index={1} dir={theme.direction}>
-          A moi
+        {[...Array(10).keys()].map(item => (
+              <AmoiElement />
+          ))
+
+          }
         </TabPanel>
         <TabPanel value={value} index={2} dir={theme.direction}>
-          De moi
+        {[...Array(10).keys()].map(item => (
+              <DemoiElement />
+          ))
+
+          }
         </TabPanel>
         <TabPanel value={value} index={3} dir={theme.direction}>
-          Surveiller
+        {[...Array(5).keys()].map(item => (
+              <Surveillez />
+          ))
+
+          }
         </TabPanel>
-      </SwipeableViews>
+      
     </Box>
   );
 }
