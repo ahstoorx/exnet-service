@@ -1,18 +1,18 @@
-import logo from './logo.svg';
+
 import './App.css';
-import { Box } from '@mui/material';
-import Entete from './componentes/Entete';
-import BottomHeader from './componentes/BottomHeader';
-import Selecttab from './componentes/Selecttab';
-import './App.css';
+import { Routes,Route } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ParametrePage from './pages/ParametrePage';
 
 function App() {
   return (
-    <Box>
-      <Entete />
-      <Selecttab />
-      <BottomHeader />
-    </Box>
+    <>
+    <Routes>
+      <Route path={"/"} element={<HomePage />} />
+      <Route path={"/parametre"} element={<ParametrePage />} />
+    </Routes>
+    
+    </>
   );
 }
 
