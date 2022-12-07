@@ -21,7 +21,7 @@ function ParametrePage(props) {
                     <Home />
                 </Box>
             </Stack>
-            <Box>
+            <Box style={{paddingInline:'15px'}}>
 
                 <div>
                     <Link to="#" style={{ textDecoration: 'none' }}>
@@ -48,14 +48,14 @@ function ParametrePage(props) {
                 </div>
             </Box>
 
-            <Box position="fixed" sx={{ top: 'auto', bottom: 0 }}>
-                <div style={{ justifyContent: 'center', textAlign: 'center', }}>
-                    <Link to={'#'} >
-                        Fermer la session
-                    </Link>
-                </div>
 
-            </Box>
+            <div style={{ justifyContent: 'center', textAlign: 'center', top: 'auto', bottom: 0, position: 'fixed',width:'100%',paddingBlock:'10px' }}>
+                <Link to={'#'} style={{paddingInline:'10px',color:'black',borderWidth:'1px',borderColor:couleur.parisColor,borderStyle:'solid',borderRadius:'32px',textDecoration:'none'}} >
+                    Fermer la session
+                </Link>
+            </div>
+
+
         </div>
     );
 }

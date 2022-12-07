@@ -1,6 +1,7 @@
 import { Notifications, NotificationsNone, StarBorder, StarRate } from '@mui/icons-material';
 import { Box, IconButton, Typography } from '@mui/material';
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 
 function Surveillez(props) {
@@ -12,7 +13,7 @@ function Surveillez(props) {
         <div >
 
             <Box >
-                <Typography variant="body2" component={'h1'} sx={{ color: 'GrayText' }} >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography>
+                <Link to={'/tracking'} style={{textDecoration:'none' }}> <Typography variant="body2" component={'h1'} sx={{ color: 'GrayText',textDecoration:'none' }} >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography></Link>
                 <Typography variant="subtitle2" component={'small'} sx={{ color: 'GrayText' }}>770534908919
                     {(!notify ? (<IconButton onClick={() => setNotify(!notify)} > <NotificationsNone fontSize={'small'} /></IconButton>) : (
                         <IconButton onClick={() => setNotify(!notify)} ><Notifications fontSize={'small'} color={'primary'} />  </IconButton>
@@ -31,6 +32,7 @@ function Surveillez(props) {
                 <Typography variant="subtitle2" component={'strong'} >Livraison mise à jour lun 28 nov 2022 avant 6:00pm</Typography>
 
             </Box>
+            <hr style={{ marginY: 2 }} />
 
 
 

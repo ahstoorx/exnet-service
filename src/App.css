@@ -1,12 +1,16 @@
-.Mui-selected
-{
-  background-color:'white';
+.Mui-selected {
+  background-color: white;
 }
 
-.swiper-button-next,.swiper-button-prev{
-  color:'white',
+.swiper-button-next,
+.swiper-button-prev {
+  color: white,
 }
 
-.buttonhover:hover{
+.buttonhover:hover {
   cursor: pointer;
+}
+
+input[type="search"] {
+  border-radius: 32px;
 }

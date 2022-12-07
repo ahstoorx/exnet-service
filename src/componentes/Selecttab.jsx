@@ -55,8 +55,8 @@ export default function Selecttab() {
 
 
   return (
-    <Box sx={{ bgcolor: 'background.paper', width: '100%',position:'absolute',marginTop:'80px',bottom:'auto',top:50,marginBottom:'90px' }}>
-      <AppBar sx={{top:'72px'}} >
+    <Box sx={{ bgcolor: 'background.paper', width: '100%',position:'absolute',marginTop:'60px',bottom:'auto',top:50,marginBottom:'90px' }}>
+      <AppBar sx={{top:'110px',marginBottom:'30px'}} >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -73,28 +73,28 @@ export default function Selecttab() {
         </Tabs>
       </AppBar>
       
-        <TabPanel value={value} index={0} dir={theme.direction}>
+        <TabPanel value={value} index={0} dir={theme.direction} style={{paddingTop:'35px'}}>
           {[...Array(10).keys()].map(item => (
               <TousElement />
           ))
 
           }
         </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
+        <TabPanel value={value} index={1} dir={theme.direction} style={{paddingTop:'35px'}}>
         {[...Array(10).keys()].map(item => (
               <AmoiElement />
           ))
 
           }
         </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
+        <TabPanel value={value} index={2} dir={theme.direction} style={{paddingTop:'35px'}}>
         {[...Array(10).keys()].map(item => (
               <DemoiElement />
           ))
 
           }
         </TabPanel>
-        <TabPanel value={value} index={3} dir={theme.direction}>
+        <TabPanel value={value} index={3} dir={theme.direction} style={{paddingTop:'35px'}}>
         {[...Array(5).keys()].map(item => (
               <Surveillez />
           ))

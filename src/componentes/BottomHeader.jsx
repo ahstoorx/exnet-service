@@ -1,9 +1,9 @@
-import { AccessTime, Add, Person } from '@mui/icons-material';
+import { AccessTime, Add, FilterNone, Person } from '@mui/icons-material';
 import { AppBar, Box, Fab, styled, Toolbar, Stack, Collapse, Container,  SwipeableDrawer} from '@mui/material';
 import React, { useState } from 'react';
 import couleur from './../assets/other/ExnetColor';
 import { Link } from 'react-router-dom';
-import { IconCalculator, IconTimeline } from '@tabler/icons';
+import { IconAlertCircle, IconCalculator, IconSearch, IconTimeline } from '@tabler/icons';
 
 
 function BottomHeader(props) {
@@ -65,10 +65,10 @@ function BottomHeader(props) {
             <AppBar position="fixed" sx={{ top: 'auto', bottom: 0, backgroundColor: couleur.parisColor, height: taille }}>
                 <Toolbar>
                     <Container sx={{display:affichage}}>
-                        <Stack direction={'row'} spacing={3} sx={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
-                                <Person />
-                                EXPEDIER
+                        <Stack direction={'row'} spacing={1} sx={{ alignItems: 'center', justifyContent: 'center' }}>
+                            <Link to="/expedier" style={{ textDecoration: 'none', color: 'white', textAlign: 'center',textTransform:'uppercase' }} >
+                                <FilterNone />
+                                expédier
                             </Link>
                             <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
                                 <IconCalculator />
@@ -86,14 +86,14 @@ function BottomHeader(props) {
                     </StyledFab>
                     <Box sx={{ flexGrow: 1 ,display:affichage}} />
                     <Container sx={{display:affichage}}>
-                        <Stack direction={'row'} spacing={3} sx={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
-                                <AccessTime />
-                                HOME
-                            </Link>
-                            <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+                        <Stack direction={'row'} spacing={1} sx={{ alignItems: 'center', justifyContent: 'center' }}>
+                            <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center',textTransform:'uppercase' }} >
                                 <AccessTime />
                                 Enlèvement
+                            </Link>
+                            <Link to="/enlevement" style={{ textDecoration: 'none', color: 'white', textAlign: 'center',textTransform:'uppercase' }} >
+                                <AccessTime />
+                                   expéditions livrées
                             </Link>
                         </Stack>
 
@@ -104,32 +104,32 @@ function BottomHeader(props) {
                 <Collapse in={open} timeout="auto" unmountOnExit>
 
                     <Stack direction={'row'} spacing={3} sx={{ alignItems: 'center', justifyContent: 'center' }}>
-                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
-                            <Person />
+                        <Link to="/expedier" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+                            <FilterNone />
                             EXPEDIER
                         </Link>
                         <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
                             <IconCalculator />
                             TARIFS
                         </Link>
-                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+                        <Link to="/enlevement" style={{ textDecoration: 'none', color: 'white', textAlign: 'center',textTransform:'uppercase' }} >
                             <AccessTime />
-                            ENLEVEMENT
+                            enlèvement
                         </Link>
-                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
-                            <AccessTime />
-                            SUIVRE
+                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center',textTransform:'uppercase' }} >
+                            <IconSearch />
+                            expéditions livrées
                         </Link>
                     </Stack>
                    
                     <Stack direction={'row'} spacing={4} sx={{gap:1, alignItems: 'center', justifyContent: 'center',marginY:'20px' }}>
-                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center',textTransform:'uppercase' }} >
                             <Person />
                             <br/>
-                            POINTS DE DEPOT
+                            expéditions archivées
                         </Link>
                         <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
-                            <IconCalculator />
+                            <IconAlertCircle />
                              <br/>
                             AIDE
                         </Link>

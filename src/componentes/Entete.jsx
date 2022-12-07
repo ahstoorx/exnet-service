@@ -18,6 +18,7 @@ import {
     Box,
     Center,
     ThemeIcon,
+    Input,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -35,6 +36,8 @@ import {
     IconChartPie3,
     IconFingerprint,
     IconCoin,
+    IconAt,
+    IconSearch,
 } from '@tabler/icons';
 import { Link } from 'react-router-dom';
 import couleur from '../assets/other/ExnetColor'
@@ -43,7 +46,7 @@ import couleur from '../assets/other/ExnetColor'
 
 const data = {
     "user": {
-        "name": "A. Hyacinthe",
+        "name": "Hyacinthe",
         "email": "ah.stoorx@gmail.com",
         "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
     },
@@ -99,17 +102,18 @@ const useStyles = createStyles((theme) => ({
         paddingTop: theme.spacing.sm,
         backgroundColor: couleur.parisColor,
         borderBottom: `1px solid ${couleur.parisColor}`,
-        position:'fixed',
+        position: 'fixed',
         top: 0,
-        bottom:'auto',
+        bottom: 'auto',
         width: '100%',
-        zIndex:100000000
+        zIndex: 100000000
 
     },
     conteneurGroupe: {
         [theme.fn.smallerThan('md')]: {
             display: 'flex',
-            alignItems:'flex-start',
+            alignItems: 'flex-end',
+            alignContent: 'center',
             flexWrap: 'nowrap',
             gap: 2,
         },
@@ -139,13 +143,6 @@ const useStyles = createStyles((theme) => ({
             display: 'none',
         },
     },
-
-    // userActive: {
-    //     backgroundColor: theme.fn.lighten(
-    //         theme.fn.variant({ variant: 'filled', color: theme.primaryColor }).background,
-    //         0.1
-    //     ),
-    // },
 
     tabs: {
         [theme.fn.smallerThan('sm')]: {
@@ -267,18 +264,11 @@ function Entete(props) {
         <div className={classes.header} >
             <Container className={classes.mainSection}>
                 <Group position="apart" className={classes.conteneurGroupe}>
-                    {/* <MantineLogo size={28} inverted /> */}
-                    <img src={logoParis} alt="logoParis"  height={60} />
-                    {/* <Burger
-                        className={classes.burger}
-                        size="sm"
-                        color={theme.white}
-                        opened={drawerOpened}
-                        onClick={toggleDrawer}
-                    /> */}
+
+                    <img src={logoParis} alt="logoParis" height={30} style={{ paddingLeft: 80 }} />
 
                     <Menu
-                        width={260}
+                        width={20}
                         position="bottom-end"
                         transition="pop-top-right"
                         onClose={() => setUserMenuOpened(false)}
@@ -289,11 +279,12 @@ function Entete(props) {
                                 className={cx(classes.user, { [classes.userActive]: userMenuOpened })}
                             >
                                 <Group spacing={7}>
-                                    <Avatar src={user.image} alt={user.name} radius="xl" size={20} />
+
                                     <Text weight={500} size="sm" sx={{ lineHeight: 1, color: theme.white }} mr={3}>
                                         {user.name}
                                     </Text>
-                                    <IconChevronDown size={12} stroke={1.5} />
+                                    <Avatar src={user.image} alt={user.name} radius="xl" size={20} />
+                                    {/* <IconChevronDown size={12} stroke={1.5} /> */}
                                 </Group>
                             </UnstyledButton>
                         </Menu.Target>
@@ -327,50 +318,14 @@ function Entete(props) {
                         </Menu.Dropdown>
                     </Menu>
                 </Group>
+
+                <Input
+                    icon={<IconSearch />}
+                    placeholder="Rechercher/Suivre"
+                    type={'search'}
+                    style={{borderRadius:'320px',marginBlock:'15px'}}
+                />
             </Container>
-           
-
-
-            {/* Drawer */}
-            <Drawer
-                opened={drawerOpened}
-                onClose={closeDrawer}
-                size="100%"
-                padding="md"
-                title="Navigation"
-                className={classes.hiddenDesktop}
-                zIndex={1000000}
-            >
-                <ScrollArea sx={{ height: 'calc(100vh - 60px)' }} mx="-md">
-                    <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
-
-                    <Link to="#" className={classes.link}>
-                        Home
-                    </Link>
-                    <UnstyledButton className={classes.link} onClick={toggleLinks}>
-                        <Center inline>
-                            <Box component="span" mr={5}>
-                                Features
-                            </Box>
-                            <IconChevronDown size={16} color={theme.fn.primaryColor()} />
-                        </Center>
-                    </UnstyledButton>
-                    <Collapse in={linksOpened}>{links}</Collapse>
-                    <Link to="#" className={classes.link}>
-                        Learn
-                    </Link>
-                    <Link to="#" className={classes.link}>
-                        Academy
-                    </Link>
-
-                    <Divider my="sm" color={theme.colorScheme === 'dark' ? 'dark.5' : 'gray.1'} />
-
-                    <Group position="center" grow pb="xl" px="md">
-                        <Button variant="default">Log in</Button>
-                        <Button>Sign up</Button>
-                    </Group>
-                </ScrollArea>
-            </Drawer>
         </div>
     );
 }
