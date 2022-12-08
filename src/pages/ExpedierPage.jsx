@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowBackIos, Home } from '@mui/icons-material';
-import { Box, Button, Stack } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import couleur from './../assets/other/ExnetColor.js';
 import { Divider, Select, Switch, Text, TextInput } from '@mantine/core';
@@ -66,7 +66,7 @@ function ExpedierPage(props) {
             </Text>
 
 
-           
+
             <Box style={{ paddingInline: '10px' }}>
                 <div style={{ backgroundColor: '#dadce0', padding: '20px', marginBlock: '5px' }} >
 
@@ -114,14 +114,16 @@ function ExpedierPage(props) {
 
                     <TextInput type={'email'} label={'E-MAIL'} />
                 </div>
-                <Switch
-                    label="Il s'agit d'une adresse residentielle "
-                />
-                <Switch
-                    label="Enregistrer comme destinataire"
-                />
+                <div style={{ display: 'flex',alignItems:'flex-end', justifyContent: 'space-between',width:'100%' }} >
+                    <Typography variant="subtitle2" component={'small'}>Il s'agit d'une adresse residentielle</Typography>
+                    <Switch />
+                </div>
+                <div style={{ display: 'flex',alignItems:'flex-end', justifyContent: 'space-between',width:'100%' }} >
+                    <Typography variant="subtitle2" component={'small'}>Enregistrer comme destinataire</Typography>
+                    <Switch />
+                </div>
 
-                <Button fullWidth variant="contained" style={{marginBlock:'15px'}}>Continuer</Button>
+                <Button fullWidth variant="contained" style={{ marginBlock: '15px',backgroundColor:couleur.parisColor }}>Continuer</Button>
             </Box>
 
 

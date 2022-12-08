@@ -11,6 +11,6 @@
   cursor: pointer;
 }
 
-input[type="search"] {
+.recherche {
   border-radius: 32px;
 }

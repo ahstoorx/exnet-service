@@ -10,13 +10,7 @@ import {
     Text,
     Menu,
     Tabs,
-    ScrollArea,
-    Drawer,
-    Divider,
-    Collapse,
-    Button,
-    Box,
-    Center,
+   
     ThemeIcon,
     Input,
 } from '@mantine/core';
@@ -265,7 +259,7 @@ function Entete(props) {
             <Container className={classes.mainSection}>
                 <Group position="apart" className={classes.conteneurGroupe}>
 
-                    <img src={logoParis} alt="logoParis" height={30} style={{ paddingLeft: 80 }} />
+                    <img src={logoParis} alt="logoParis" height={30}  />
 
                     <Menu
                         width={20}
@@ -324,6 +318,8 @@ function Entete(props) {
                     placeholder="Rechercher/Suivre"
                     type={'search'}
                     style={{borderRadius:'320px',marginBlock:'15px'}}
+                    radius={'lg'}
+                    
                 />
             </Container>
         </div>
