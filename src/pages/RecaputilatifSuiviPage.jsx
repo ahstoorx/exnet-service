@@ -1,3 +1,4 @@
+import { Group, Text } from '@mantine/core';
 import { ArrowBackIos, Home, Star } from '@mui/icons-material';
 import { Box, Container, Stack, Button, Typography, Switch } from '@mui/material';
 import React from 'react';
@@ -26,76 +27,58 @@ function RecaputilatifSuiviPage(props) {
                 <Star flex={1} sx={{ color: couleur.parisColor }} />
             </Stack>
             <Box sx={{ justifyContent: 'center', textAlign: 'center' }}>
-                <Typography variant="subtitle2">Etat</Typography>
-                <Typography variant="h5">Destination</Typography>
-                <Typography variant="h6">Livraison mise à jour</Typography>
-                <Typography variant="h6">En attente</Typography>
-                <Typography variant="subtitle2" component={'small'}>Initialement prévu :date</Typography>
+                {/* <Text fz={'md'}>Etat</Text> */}
+                <Text fz={'lg'} fw={700} tt={'uppercase'} mb={30} >Destination</Text>
+                <Text fw={700}>Livraison mise à jour</Text>
+                <Text fz={'md'}>En attente</Text>
+                <Text fz={'sm'} component={'small'}>Initialement prévu :date</Text>
             </Box>
             <Box style={{ paddingInline: '15px' }}>
 
                 <Container sx={{ display: 'flex', gap: 2, minHeight: '50vh' }}>
-                    <div style={{ borderWidth: '1px', borderStyle: 'solid', borderColor: couleur.parisColor, borderRadius: '32px', width: { xs: '10vw', md: '7vw' }, backgroundColor: couleur.parisColor }}>
+                    <div style={{ borderWidth: '2px', borderStyle: 'solid', borderColor: couleur.parisColor, borderRadius: '32px', width: { sm: '10vw', md: '7vw' }, backgroundColor: couleur.parisColor }}>
 
                     </div>
                     <div>
                         <Box marginY={3}>
-                            <Typography variant="h6">origine</Typography>
-                            <Typography variant="subtitle2" >PAULINE</Typography>
-                            <Typography variant="subtitle2" >Adresse</Typography>
-                            <Typography variant="subtitle2" >Detail </Typography>
-                            <Typography variant="subtitle2" >Lieu</Typography>
-                            <Typography variant="subtitle2" component={'small'}>date</Typography>
+                            <Text fw={700}>ORIGINE</Text>
+                            <Text fz={'md'}  >EXNET OPERATION</Text>
+                            <Text fz={'md'}  >20 ALLEE DES ERABLES</Text>
+                            <Text fz={'md'}  >VILLEPINTE,93939527 </Text>
+                            <Text fz={'sm'}  >Le nov 10 à 10:10AM</Text>
+                            
 
                         </Box>
 
                         <Box marginY={3}>
-                            <Typography variant="h6">colis reçu par exnet</Typography>
-                            <Typography variant="subtitle2" >PAULINE</Typography>
-                            <Typography variant="subtitle2" >Adresse</Typography>
-                            <Typography variant="subtitle2" >Detail </Typography>
-                            <Typography variant="subtitle2" >Lieu</Typography>
-                            <Typography variant="subtitle2" component={'small'}>date</Typography>
+                            <Text fw={700} tt={'uppercase'} >colis reçu par exnet</Text>
 
                         </Box>
 
                         <Box marginY={3}>
-                            <Typography variant="h6">En transit</Typography>
-                            <Typography variant="subtitle2" >PAULINE</Typography>
-                            <Typography variant="subtitle2" >Adresse</Typography>
-                            <Typography variant="subtitle2" >Detail </Typography>
-                            <Typography variant="subtitle2" >Lieu</Typography>
-                            <Typography variant="subtitle2" component={'small'}>date</Typography>
+                            <Text fw={700} tt={'uppercase'} >RETARD</Text>
+                            <Text fz={'md'} >ST MARIE</Text>
+                            <Text fz={'md'} >Le nov 10 à 09:10 AM</Text>
 
                         </Box>
 
                         <Box marginY={3}>
-                            <Typography variant="h6">En cours de livraison</Typography>
-                            <Typography variant="subtitle2" >PAULINE</Typography>
-                            <Typography variant="subtitle2" >Adresse</Typography>
-                            <Typography variant="subtitle2" >Detail </Typography>
-                            <Typography variant="subtitle2" >Lieu</Typography>
-                            <Typography variant="subtitle2" component={'small'}>date</Typography>
+                            <Text fw={700} tt={'uppercase'} >En cours de livraison</Text>
+                            <Text fz={'md'} >ST MARIE</Text>
+                            <Text fz={'md'} >Le nov 10 à 15:30PM</Text>
 
                         </Box>
 
-                        <Box marginY={3}>
-                            <Typography variant="h6">En cours de livraison</Typography>
-                            <Typography variant="subtitle2" >PAULINE</Typography>
-                            <Typography variant="subtitle2" >Adresse</Typography>
-                            <Typography variant="subtitle2" >Detail </Typography>
-                            <Typography variant="subtitle2" >Lieu</Typography>
-                            <Typography variant="subtitle2" component={'small'}>date</Typography>
 
-                        </Box>
+                        
 
                         <Box marginY={3}>
-                            <Typography variant="h6">Destinataire</Typography>
-                            <Typography variant="subtitle2" >PAULINE</Typography>
-                            <Typography variant="subtitle2" >Adresse</Typography>
-                            <Typography variant="subtitle2" >Detail </Typography>
-                            <Typography variant="subtitle2" >Lieu</Typography>
-                            <Typography variant="subtitle2" component={'small'}>date</Typography>
+                            <Text fw={700} tt={'uppercase'} >DESTINATION</Text>
+                            <Text fz={'md'} >DR EPERONNIER</Text>
+                            <Text fz={'md'} >ALLEE DES TROPAZES,SITE FELIX</Text>
+                            <Text fz={'md'} >CENTRE DVMO </Text>
+                            <Text fz={'md'} >ST DENIS215470 RE</Text>
+                            <Text fz={'sm'} >28 nov avant la finde journée</Text>
 
                         </Box>
 
@@ -109,24 +92,24 @@ function RecaputilatifSuiviPage(props) {
             <Box marginY={3} paddingX={3}>
                 <hr style={{ marginY: 2 }} />
 
-                <div  style={{display:'flex',justifyContent:'space-between'}}>
-                    <Typography variant="h6">Afra ALADBA</Typography>
-                    <Typography variant="h6">Détails</Typography>
-                </div>
+                <Group position={'apart'} >
+                    <Text fw={700}>Afra ALADBA</Text>
+                    <Text fw={700}><Link to={'/details'} style={{ textDecoration: 'none' }}>Details</Link></Text>
+                </Group>
 
-                <Typography variant="subtitle2" >PAULINE</Typography>
-                <Typography variant="subtitle2" >Adresse</Typography>
+                <Text fz={'md'} >PAULINE</Text>
+                <Text fz={'md'} >Adresse</Text>
 
                 <hr style={{ marginY: 2 }} />
-                <div style={{display:'flex',alignItems:'center',justifyContent:'space-between'}}> 
-                    <Typography variant="subtitle2" >Notifications</Typography>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <Text fz={'md'} >Notifications</Text>
                     <Switch value="react" />
                 </div>
 
                 <hr style={{ marginY: 2 }} />
-                <Typography variant="subtitle2" >Envoyer des mises à jour de statut</Typography>
+                <Text fz={'md'} >Envoyer des mises à jour de statut</Text>
                 <hr style={{ marginY: 2 }} />
-                <Typography variant="subtitle2" >Ajouter pseudo & notes</Typography>
+                <Text fz={'md'} >Ajouter pseudo & notes</Text>
 
             </Box>
 

@@ -13,7 +13,7 @@ function Surveillez(props) {
         <div >
 
             <Box >
-                <Link to={'/tracking'} style={{textDecoration:'none' }}> <Typography variant="body2" component={'h1'} sx={{ color: 'GrayText',textDecoration:'none' }} >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography></Link>
+                <Link to={'/tracking'} style={{textDecoration:'none' }}> <Typography variant="body1" component={'h1'}  >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography></Link>
                 <Typography variant="subtitle2" component={'small'} sx={{ color: 'GrayText' }}>770534908919
                     {(!notify ? (<IconButton onClick={() => setNotify(!notify)} > <NotificationsNone fontSize={'small'} /></IconButton>) : (
                         <IconButton onClick={() => setNotify(!notify)} ><Notifications fontSize={'small'} color={'primary'} />  </IconButton>

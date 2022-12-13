@@ -43,17 +43,7 @@ const data = {
         "name": "Hyacinthe",
         "email": "ah.stoorx@gmail.com",
         "image": "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=255&q=80"
-    },
-    "tabs": [
-        "Home",
-        "Orders",
-        "Education",
-        "Community",
-        "Forums",
-        "Support",
-        "Account",
-        "Helpdesk"
-    ]
+    }
 }
 
 const useStyles = createStyles((theme) => ({
@@ -184,7 +174,7 @@ const useStyles = createStyles((theme) => ({
 
 function Entete(props) {
 
-    const { user, tabs } = data;
+    const { user } = data;
 
     const { classes, theme, cx } = useStyles();
     const [userMenuOpened, setUserMenuOpened] = useState(false);
@@ -192,11 +182,6 @@ function Entete(props) {
     const [drawerOpened, { toggle: toggleDrawer, close: closeDrawer }] = useDisclosure(false);
     const [linksOpened, { toggle: toggleLinks }] = useDisclosure(false);
 
-    const items = tabs.map((tab) => (
-        <Tabs.Tab value={tab} key={tab}>
-            {tab}
-        </Tabs.Tab>
-    ));
 
 
 

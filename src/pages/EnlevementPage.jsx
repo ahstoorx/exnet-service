@@ -3,6 +3,7 @@ import { ArrowBackIos, Home } from '@mui/icons-material';
 import { Box, Button, Stack } from '@mui/material';
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import EnteteNiveau2 from '../componentes/EnteteNiveau2.jsx';
 import couleur from './../assets/other/ExnetColor.js';
 
 
@@ -11,17 +12,10 @@ function EnlevementPage(props) {
     const navigation = useNavigate()
     return (
         <div>
-            <Stack direction={'row'} spacing={3} sx={{ top: 0, bottom: 'auto', paddingY: '30px', alignItems: 'center', justifyContent: 'center', color: 'white', backgroundColor: couleur.parisColor }}>
-                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center' }} onClick={() => navigation(-1)}>
-                    <ArrowBackIos />
-                </Box>
-                <Box flex={6} sx={{ display: 'flex', justifyContent: 'center' }}>
-                    Enlèvement planifié
-                </Box>
-                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center' }} onClick={() => navigation('/')} >
-                    <Home />
-                </Box>
-            </Stack>
+             <EnteteNiveau2 libelle={' Enlèvement planifié'} >
+                içsdifdsdsdsd
+             </EnteteNiveau2>
+            
             <Box>
                 <Text ta={'center'} mt={30} mb={10} >
                     Consultez vos enlèvement existants ou planifiez un nouvel enlèvement

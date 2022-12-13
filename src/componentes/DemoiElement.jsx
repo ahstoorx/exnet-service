@@ -2,6 +2,7 @@ import { Notifications, NotificationsNone, StarBorder, StarRate } from '@mui/ico
 import { Box, IconButton, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { useTheme } from '@mui/material/styles';
+import {Link } from 'react-router-dom';
 
 
 // Import Swiper styles
@@ -39,7 +40,7 @@ function DemoiElement(props) {
                 style={{ paddingBottom: '25px', paddingTop: '0px' }}
             >
                 <Box onClick={() => changeNumber()}>
-                    <Typography variant="body2" component={'h1'} sx={{ color: 'GrayText' }} >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography>
+                <Link to={'/tracking'} style={{textDecoration:'none' }}><Typography variant="body1" component={'h1'}  >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography></Link>
                     <Typography variant="subtitle2" component={'small'} sx={{ color: 'GrayText' }}>770534908919
                         {(!notify ? (<IconButton onClick={() => setNotify(!notify)} > <NotificationsNone fontSize={'small'} /></IconButton>) : (
                             <IconButton onClick={() => setNotify(!notify)} ><Notifications fontSize={'small'} color={'primary'} />  </IconButton>
@@ -61,7 +62,7 @@ function DemoiElement(props) {
 
                 <div style={{ display: 'flex', justifyContent: 'space-between', maxHeight: '90px', overflow: 'hidden' }}>
                     <Box>
-                        <Typography variant="subtitle1" component={'small'} sx={{ color: 'GrayText', diplay: 'block' }} >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography>
+                    <Link to={'/tracking'} style={{textDecoration:'none' }}><Typography variant="subtitle1" component={'small'} sx={{ color: 'GrayText', diplay: 'block' }} >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography></Link>
                         <br />
                         <Typography variant="subtitle2" component={'small'} sx={{ color: 'GrayText' }}>770534908919
                             {(!notify ? (<IconButton onClick={() => setNotify(!notify)} > <NotificationsNone fontSize={'small'} /></IconButton>) : (

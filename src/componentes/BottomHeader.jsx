@@ -3,7 +3,7 @@ import { AppBar, Box, Fab, styled, Toolbar, Stack, Collapse, Container, Swipeabl
 import React, { useState } from 'react';
 import couleur from './../assets/other/ExnetColor';
 import { Link } from 'react-router-dom';
-import { IconAlertCircle, IconCalculator, IconList, IconSearch, IconSettings, IconTimeline } from '@tabler/icons';
+import { IconAlertCircle, IconCalculator, IconList, IconPackage, IconSearch, IconSettings, IconTimeline } from '@tabler/icons';
 
 
 function BottomHeader(props) {
@@ -67,10 +67,10 @@ function BottomHeader(props) {
                     <Container sx={{ display: affichage }}>
                         <Stack direction={'row'} spacing={1} sx={{ alignItems: 'center', justifyContent: 'center' }}>
                             <Link to="/expedier" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
-                                <FilterNone />
+                                <IconPackage />
                                 expédier
                             </Link>
-                            <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+                            <Link to="/tarif" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
                                 <IconCalculator />
                                 TARIFS
                             </Link>
@@ -105,10 +105,10 @@ function BottomHeader(props) {
 
                     <Stack direction={'row'} spacing={3} sx={{ alignItems: 'center', justifyContent: 'center' }}>
                         <Link to="/expedier" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
-                            <FilterNone />
+                            <IconPackage />
                             EXPEDIER
                         </Link>
-                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+                        <Link to="/tarif" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
                             <IconCalculator />
                             TARIFS
                         </Link>
@@ -123,12 +123,12 @@ function BottomHeader(props) {
                     </Stack>
 
                     <Stack direction={'row'} spacing={4} sx={{ gap: 1, alignItems: 'center', justifyContent: 'center', marginY: '20px' }}>
-                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
-                            <Person />
+                        <Link to="/expeditions-archive" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
+                            <IconList />
                             <br />
                             expéditions archivées
                         </Link>
-                        <Link to="#" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+                        <Link to="/aide" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
                             <IconAlertCircle />
                             <br />
                             AIDE
