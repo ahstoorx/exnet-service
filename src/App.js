@@ -12,14 +12,18 @@ import ExpeditionArchivePage from './pages/ExpeditionArchivePage';
 import Aide from './pages/Aide';
 import Tarif from './pages/Tarif';
 import DetailsPage from './pages/DetailsPage';
+import EmballagePage from './pages/EmballagePage';
+import LegalePage from './pages/LegalePage';
 
 function App() {
   return (
     <>
     <Routes>
       <Route path={"/"} element={<HomePage />} />
+      <Route path={"/legal"} element={<LegalePage />} />
       <Route path={"/aide"} element={<Aide />} />
       <Route path={"/tarif"} element={<Tarif />} />
+      <Route path={"/emballage"} element={<EmballagePage />} />
       <Route path={"/expedier"} element={<ExpedierPage />} />
       <Route path={"/details"} element={<DetailsPage />} />
       <Route path={"/tracking"} element={<RecaputilatifSuiviPage />} />

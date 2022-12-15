@@ -17,11 +17,14 @@ function PlanifierEnlevementPage(props) {
 
             <div style={{ marginInline: 6, marginTop: 100 }}>
                 <Tabs defaultValue="expedition" >
-                    <Tabs.List position={'center'}>
-                        <Tabs.Tab color={'green'} value="expedition" >Expédition</Tabs.Tab>
-                        <Tabs.Tab color={'green'} value="course" >Course à course</Tabs.Tab>
-                        {/* <Tabs.Tab color={'green'} value="settings" >Settings</Tabs.Tab> */}
-                    </Tabs.List>
+                    <Box style={{ position: 'fixed',width:'100%',backgroundColor:'#dee1e6',left:'-4px',marginInline:'0px',marginTop:'-16px' }}>
+                        <Tabs.List position={'center'}>
+                            <Tabs.Tab color={'green'} value="expedition" style={{backgroundColor:'white',borderRadius:'5px',margin:'0px 20px 0px 20px'}} >Expédition</Tabs.Tab>
+                            <Tabs.Tab color={'green'} value="course" style={{backgroundColor:'white',borderRadius:'5px',margin:'0px 20px 0px 20px'}}>Course à course</Tabs.Tab>
+                            {/* <Tabs.Tab color={'green'} value="settings" >Settings</Tabs.Tab> */}
+                        </Tabs.List>
+                    </Box>
+
 
                     <Tabs.Panel value="expedition" pt="xs">
                         <Box marginY={3}>
@@ -32,6 +35,7 @@ function PlanifierEnlevementPage(props) {
 
                             <Typography variant="subtitle2" >Alexandre Nadeau</Typography>
                             <Typography variant="subtitle2" sx={{ textTransform: 'uppercase' }}>20 VALLE DES ERABLES</Typography>
+                            <Typography variant="subtitle2" sx={{ textTransform: 'uppercase' }}>FRANCE</Typography>
                             <Typography variant="subtitle2" sx={{ textTransform: 'uppercase' }}>villepinte</Typography>
                             <Typography variant="subtitle2" sx={{ textTransform: 'uppercase' }}>+33 1 25 14 241</Typography>
 

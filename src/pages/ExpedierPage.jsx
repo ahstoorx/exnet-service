@@ -123,7 +123,7 @@ function ExpedierPage(props) {
                                 <Switch />
                             </div>
 
-                            <Button fullWidth variant="contained" style={{ marginBlock: '15px', backgroundColor: couleur.parisColor }}>Continuer</Button>
+                            <Button onClick={()=>navigation('/emballage')} fullWidth variant="contained" style={{ marginBlock: '15px', backgroundColor: couleur.parisColor }}>Continuer</Button>
                         </Box>
                     </Tabs.Panel>
 
@@ -224,7 +224,7 @@ function ExpedierPage(props) {
                                 <Switch />
                             </div>
 
-                            <Button fullWidth variant="contained" style={{ marginBlock: '15px', backgroundColor: couleur.parisColor }}>Continuer</Button>
+                            <Button onClick={()=>navigation('/emballage')} fullWidth variant="contained" style={{ marginBlock: '15px', backgroundColor: couleur.parisColor }}>Continuer</Button>
                         </Box>
                     </Tabs.Panel>
 

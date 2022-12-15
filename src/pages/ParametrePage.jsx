@@ -28,7 +28,7 @@ function ParametrePage(props) {
                 </div>
 
                 <div>
-                    <Link to="#" style={{ textDecoration: 'none' }}>
+                    <Link to={'/legal'} style={{ textDecoration: 'none' }}>
                         Mentions légales
                     </Link>
                 </div>

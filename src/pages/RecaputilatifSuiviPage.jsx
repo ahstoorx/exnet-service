@@ -46,7 +46,7 @@ function RecaputilatifSuiviPage(props) {
                             <Text fz={'md'}  >20 ALLEE DES ERABLES</Text>
                             <Text fz={'md'}  >VILLEPINTE,93939527 </Text>
                             <Text fz={'sm'}  >Le nov 10 à 10:10AM</Text>
-                            
+
 
                         </Box>
 
@@ -70,7 +70,7 @@ function RecaputilatifSuiviPage(props) {
                         </Box>
 
 
-                        
+
 
                         <Box marginY={3}>
                             <Text fw={700} tt={'uppercase'} >DESTINATION</Text>
@@ -105,7 +105,10 @@ function RecaputilatifSuiviPage(props) {
                     <Text fz={'md'} >Notifications</Text>
                     <Switch value="react" />
                 </div>
-
+                <hr style={{ marginY: 2 }} />
+                <Text fz={'md'} >Modifier adresse livraison</Text>
+                <hr style={{ marginY: 2 }} />
+                <Text fz={'md'} >Retour à l'expéditeur</Text>
                 <hr style={{ marginY: 2 }} />
                 <Text fz={'md'} >Envoyer des mises à jour de statut</Text>
                 <hr style={{ marginY: 2 }} />
