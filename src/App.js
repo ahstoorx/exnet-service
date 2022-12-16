@@ -14,6 +14,7 @@ import Tarif from './pages/Tarif';
 import DetailsPage from './pages/DetailsPage';
 import EmballagePage from './pages/EmballagePage';
 import LegalePage from './pages/LegalePage';
+import InformationColisPage from './pages/InformationColisPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path={"/aide"} element={<Aide />} />
       <Route path={"/tarif"} element={<Tarif />} />
       <Route path={"/emballage"} element={<EmballagePage />} />
+      <Route path={"/information-colis"} element={<InformationColisPage />} />
       <Route path={"/expedier"} element={<ExpedierPage />} />
       <Route path={"/details"} element={<DetailsPage />} />
       <Route path={"/tracking"} element={<RecaputilatifSuiviPage />} />

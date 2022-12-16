@@ -18,7 +18,7 @@ function EmballagePage(props) {
                     Sélectionnez l'emballage pour votre envoi.
                 </Text>
                 <Divider my={20} />
-                <Group position={'apart'} my={20}>
+                <Group position={'apart'} my={20} onClick={()=>navigation('/information-colis')}>
                     <Box>
                         <Text fz={'lg'}>Votre emballage</Text>
                         <Text fz={'xs'}>Poids max:68.0 kg/150.0Ib</Text>
@@ -27,7 +27,7 @@ function EmballagePage(props) {
                 </Group>
 
                 <Divider my={20} />
-                <Group position={'apart'} my={20}>
+                <Group position={'apart'} my={20} onClick={()=>navigation('/information-colis')}>
                     <Box>
                         <Text fz={'lg'}>Exnet Box</Text>
                         <Text fz={'xs'}>27,62 cm x 3,81 cm x 31,43 cm</Text>
@@ -40,7 +40,7 @@ function EmballagePage(props) {
                 </Group>
 
                 <Divider my={20} />
-                <Group position={'apart'} my={20}>
+                <Group position={'apart'} my={20} onClick={()=>navigation('/information-colis')}>
                     <Box>
                         <Text fz={'lg'}>Exnet Envelope</Text>
                         <Text fz={'xs'}>24,13 cm x31,35 cm</Text>
@@ -52,7 +52,7 @@ function EmballagePage(props) {
 
 
                 <Divider my={20} />
-                <Group position={'apart'} my={20}>
+                <Group position={'apart'} my={20} onClick={()=>navigation('/information-colis')}>
                     <Box>
                         <Text fz={'lg'}>Exnet Pak</Text>
                         <Text fz={'xs'}>24,06 cm x32,39 cm</Text>
@@ -64,7 +64,7 @@ function EmballagePage(props) {
 
 
                 <Divider my={20} />
-                <Group position={'apart'} my={20}>
+                <Group position={'apart'} my={20} onClick={()=>navigation('/information-colis')}>
                     <Box>
                         <Text fz={'lg'}>Exnet Tube</Text>
                         <Text fz={'xs'}>15,24 cm x 15,24 cm x 96,52 cm</Text>
