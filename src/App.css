@@ -14,3 +14,11 @@
 .recherche {
   border-radius: 32px;
 }
+
+label{
+  text-transform:uppercase;
+}
+
+button:checked{
+  color:red;
+}
