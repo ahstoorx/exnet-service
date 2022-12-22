@@ -62,7 +62,7 @@ function BottomHeader(props) {
 
     return (
         <>
-            <AppBar position="fixed" sx={{ top: 'auto', bottom: 0, backgroundColor: couleur.parisColor, height: taille }}>
+            <AppBar position="fixed" paddingY={20} sx={{ top: 'auto', bottom: 0, backgroundColor: couleur.parisColor, height: taille }}>
                 <Toolbar>
                     <Container sx={{ display: affichage }}>
                         <Stack direction={'row'} spacing={1} sx={{ alignItems: 'center', justifyContent: 'center' }}>
