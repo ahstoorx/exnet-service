@@ -12,7 +12,7 @@ function EnteteNiveau2({ libelle, children }) {
     return (
         <div style={{ width: "100%", position: 'fixed', zIndex: 1000000, top: 0, bottom: 'auto', backgroundColor: couleur.parisColor, color: 'white' }}>
             <Stack direction={'row'} spacing={3}
-                sx={{ paddingY: '30px', alignItems: 'center', justifyContent: 'center' }}>
+                sx={{ paddingTop: '33px',paddingBottom: '7px', alignItems: 'center', justifyContent: 'center' }}>
                 <Box flex={1} sx={{ display: 'flex', justifyContent: 'center' }} onClick={() => navigation(-1)}>
                     <ArrowBackIos />
                 </Box>
