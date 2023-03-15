@@ -13,6 +13,7 @@ import {
    
     ThemeIcon,
     Input,
+    Divider,
 } from '@mantine/core';
 import { useDisclosure } from '@mantine/hooks';
 import {
@@ -23,17 +24,15 @@ import {
     IconSettings,
     IconTrash,
     IconSwitchHorizontal,
-    IconChevronDown,
     IconNotification,
     IconCode,
     IconBook,
     IconChartPie3,
     IconFingerprint,
     IconCoin,
-    IconAt,
     IconSearch,
 } from '@tabler/icons';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import couleur from '../assets/other/ExnetColor'
 
 
@@ -242,60 +241,49 @@ function Entete(props) {
     return (
         <div className={classes.header} >
             <Container className={classes.mainSection}>
-                <Group position="apart" className={classes.conteneurGroupe}>
+                <Group position="apart" >
+                    {/* className={classes.conteneurGroupe} */}
 
-                    <img src={logoParis} alt="logoParis" height={30}  />
+                    <img src={logoParis} alt="logoParis" width={120}  />
 
-                    <Menu
-                        width={20}
-                        position="bottom-end"
-                        transition="pop-top-right"
-                        onClose={() => setUserMenuOpened(false)}
-                        onOpen={() => setUserMenuOpened(true)}
-                    >
-                        <Menu.Target>
-                            <UnstyledButton
-                                className={cx(classes.user, { [classes.userActive]: userMenuOpened })}
-                            >
-                                <Group spacing={7}>
+                    <Menu width={200} shadow="md">
+                            <Menu.Target>
+                                <Group>
 
-                                    <Text weight={500} size="sm" sx={{ lineHeight: 1, color: theme.white }} mr={3}>
-                                        {user.name}
-                                    </Text>
-                                    <Avatar src={user.image} alt={user.name} radius="xl" size={20} />
-                                    {/* <IconChevronDown size={12} stroke={1.5} /> */}
+
+                                    <div style={{ flex: 1 }}>
+                                        <Text size="sm" weight={500} className='paris-dark-color'>
+                                            Mélaine GBENOU
+                                        </Text>
+
+                                        <Text ta={'end'} size="xs" className='paris-dark-color'>
+                                            meri 25 Jan 2023
+                                        </Text>
+                                    </div>
+                                    <Avatar radius="xl" />
+
+
                                 </Group>
-                            </UnstyledButton>
-                        </Menu.Target>
-                        <Menu.Dropdown>
-                            <Menu.Item icon={<IconHeart size={14} stroke={1.5} color={theme.colors.red[6]} />}>
-                                Liked posts
-                            </Menu.Item>
-                            <Menu.Item icon={<IconStar size={14} stroke={1.5} color={theme.colors.yellow[6]} />}>
-                                Saved posts
-                            </Menu.Item>
-                            <Menu.Item icon={<IconMessage size={14} stroke={1.5} color={theme.colors.blue[6]} />}>
-                                Your comments
-                            </Menu.Item>
+                            </Menu.Target>
 
-                            <Menu.Label>Settings</Menu.Label>
-                            <Menu.Item icon={<IconSettings size={14} stroke={1.5} />}>Account settings</Menu.Item>
-                            <Menu.Item icon={<IconSwitchHorizontal size={14} stroke={1.5} />}>
-                                Change account
-                            </Menu.Item>
-                            <Menu.Item icon={<IconLogout size={14} stroke={1.5} />}>Logout</Menu.Item>
+                            <Menu.Dropdown>
 
-                            <Menu.Divider />
 
-                            <Menu.Label>Danger zone</Menu.Label>
-                            {/* <Menu.Item icon={<IconPlayerPause size={14} stroke={1.5} />}>
-                                Pause subscription
-                            </Menu.Item> */}
-                            <Menu.Item color="red" icon={<IconTrash size={14} stroke={1.5} />}>
-                                Delete account
-                            </Menu.Item>
-                        </Menu.Dropdown>
-                    </Menu>
+                                <Menu.Item>
+                                    <Group position={'apart'} onClick={() => Navigate('/profile')}>
+                                        <Text>Voir mon profile</Text>
+                                       
+                                    </Group>
+                                </Menu.Item>
+                                <Divider my="sm" />
+                                <Menu.Item>
+                                    <Group position={'apart'}>
+                                        <Text>Déconnexion</Text>
+                                       
+                                    </Group>
+                                </Menu.Item>
+                            </Menu.Dropdown>
+                        </Menu>
                 </Group>
 
                 <Input

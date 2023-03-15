@@ -12,19 +12,22 @@ function RecaputilatifSuiviPage(props) {
     return (
         <div>
             <Stack direction={'row'} spacing={3} sx={{ top: 0, bottom: 'auto', paddingY: '30px', alignItems: 'center', justifyContent: 'center', color: 'white', backgroundColor: couleur.parisColor }}>
-                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center' }} onClick={() => navigation(-1)}>
+                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center', color: 'black' }} onClick={() => navigation(-1)}>
                     <ArrowBackIos />
                 </Box>
-                <Box flex={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Box flex={6} sx={{ display: 'flex', justifyContent: 'center', color: 'black' }}>
                     Récaputilatif du Suivi
                 </Box>
-                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center' }} onClick={() => navigation('/')} >
+                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center', color: 'black' }} onClick={() => navigation('/')} >
                     <Home />
                 </Box>
             </Stack>
             <Stack direction={'row'} spacing={3} marginY={3}>
-                <Box flex={5} sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center', }}><Button variant={'contained'} sx={{ borderRadius: '32px', backgroundColor: couleur.parisColor }}> Statut</Button></Box>
-                <Star flex={1} sx={{ color: couleur.parisColor }} />
+                <Box flex={5} sx={{ display: 'flex', justifyContent: 'center', textAlign: 'center', }}>
+                    <Button variant={'contained'} sx={{ borderRadius: '32px', backgroundColor: couleur.parisColor, color: 'black' }}>
+                        Statut
+                    </Button>
+                </Box>
             </Stack>
             <Box sx={{ justifyContent: 'center', textAlign: 'center' }}>
                 {/* <Text fz={'md'}>Etat</Text> */}

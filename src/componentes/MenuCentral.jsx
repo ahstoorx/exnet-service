@@ -7,9 +7,6 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import TousElement from './TousElement';
-import AmoiElement from './AmoiElement';
-import DemoiElement from './DemoiElement';
-import Surveillez from './Surveillez';
 import { allExpedition } from '../expeditionsData/allExpedition';
 import { listeExpeditions } from '../expeditionsData/listeExpeditions';
 import { importData } from '../expeditionsData/importData';
@@ -48,7 +45,7 @@ function a11yProps(index) {
   };
 }
 
-export default function Selecttab() {
+export default function MenuCentral({type}) {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -59,8 +56,8 @@ export default function Selecttab() {
 
 
   return (
-    <Box sx={{ bgcolor: 'background.paper', width: '100%', position: 'absolute', marginTop: '60px', bottom: 'auto', top: 50, marginBottom: '90px' }}>
-      <AppBar sx={{ top: '110px', marginBottom: '30px' }} >
+    <Box sx={{ bgcolor: 'background.paper', width: '100%', position: 'sticky', marginTop: '10px', bottom: 'auto', top: 50, marginBottom: '90px' }}>
+      <AppBar sx={{ top: '110px', marginBottom: '170px',top:150 }} >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -70,14 +67,14 @@ export default function Selecttab() {
           aria-label="full width tabs example"
           style={{ backgroundColor: '#ececec', color: 'black' }}
         >
-          <Tab label="Tous" {...a11yProps(0)} />
-          <Tab label="A moi" {...a11yProps(1)} />
-          <Tab label="De moi" {...a11yProps(2)} />
-          <Tab label="Surveiller" {...a11yProps(3)} />
+          <Tab label="En cours" {...a11yProps(0)} />
+          <Tab label="Livrée" {...a11yProps(1)} />
+          <Tab label="Toutes" {...a11yProps(2)} />
+         
         </Tabs>
       </AppBar>
 
-      <TabPanel value={value} index={0} dir={theme.direction} style={{ paddingTop: '35px' }}>
+      <TabPanel value={value} index={0} dir={theme.direction} style={{ paddingTop: '180px' }}>
         {allExpedition.map((item, index) => (
           <TousElement type={'tout'} key={index} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
         ))
@@ -87,27 +84,21 @@ export default function Selecttab() {
           allExpedition.length
         }
       </TabPanel>
-      <TabPanel value={value} index={1} dir={theme.direction} style={{ paddingTop: '35px' }}>
+      <TabPanel value={value} index={1} dir={theme.direction} style={{ paddingTop: '180px' }}>
         {importData.map((item, index) => (
-          <TousElement type={'import'} key={index} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
+          <TousElement type={type} key={index} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
         ))
 
         }
       </TabPanel>
-      <TabPanel value={value} index={2} dir={theme.direction} style={{ paddingTop: '35px' }}>
+      <TabPanel value={value} index={2} dir={theme.direction} style={{ paddingTop: '180px' }}>
         {listeExpeditions.map((item, index) => (
-          <TousElement type={'export'} key={index} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
+          <TousElement type={type} key={index} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
         ))
 
         }
       </TabPanel>
-      <TabPanel value={value} index={3} dir={theme.direction} style={{ paddingTop: '35px' }}>
-        {surveillezListe.map(item => (
-          <TousElement type={'surveillez'} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
-        ))
-
-        }
-      </TabPanel>
+      
 
     </Box>
   );

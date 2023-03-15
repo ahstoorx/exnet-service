@@ -12,11 +12,8 @@ function DetailsPage(props) {
     const navigation = useNavigate()
     return (
         <div>
-            <EnteteNiveau2 libelle={' Détails du suivi'}>
-                <>
-                    fertegtg
-                </>
-            </EnteteNiveau2>
+            <EnteteNiveau2 libelle={' Détails du suivi'} />
+               
 
 
 

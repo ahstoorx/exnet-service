@@ -1,5 +1,5 @@
 import { Notifications, NotificationsNone, StarBorder, StarRate } from '@mui/icons-material';
-import { Box, IconButton, Typography } from '@mui/material';
+import { Box, IconButton } from '@mui/material';
 import React, { useState } from 'react';
 import {Link } from 'react-router-dom'
 
@@ -9,10 +9,11 @@ import { useTheme } from '@mui/material/styles';
 // Import Swiper styles
 import 'swiper/css';
 import SwipeableViews from 'react-swipeable-views';
+import { Divider, Text } from '@mantine/core';
 
 
 
-function TousElement(props) {
+function TousElement({type,numero,service,depart,livraison}) {
 
 
     const theme = useTheme();
@@ -34,15 +35,17 @@ function TousElement(props) {
     return (
         <div >
 
+
             <SwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
                 index={value}
                 onChangeIndex={handleChangeIndex}
-                style={{ paddingBottom: '25px', paddingTop: '0px' }}
+                style={{paddingTop: '0px' }}
             >
                 <Box onClick={() => changeNumber()}>
-                <Link to={'/tracking'} style={{textDecoration:'none' }}><Typography variant="body1" component={'h1'}  >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography></Link>
-                    <Typography variant="subtitle2" component={'small'} sx={{ color: 'GrayText' }}>770534908919
+                <Link to={'/tracking'} style={{textDecoration:'none' }}>
+                    <Text fw={500} fz={12} >{service}</Text></Link>
+                    <Text fz={12}>{numero}
                         {(!notify ? (<IconButton onClick={() => setNotify(!notify)} > <NotificationsNone fontSize={'small'} /></IconButton>) : (
                             <IconButton onClick={() => setNotify(!notify)} ><Notifications fontSize={'small'} color={'primary'} />  </IconButton>
                         ))
@@ -55,33 +58,16 @@ function TousElement(props) {
                         ))
 
                         }
-                    </Typography>
-                    <Typography variant="body2" component={'h3'} sx={{ color: 'GrayText' }}>VILLEPINTE, 99 FR à ST DENIS RE</Typography>
-                    <Typography variant="subtitle2" component={'strong'} >Livraison mise à jour lun 28 nov 2022 avant 6:00pm</Typography>
+                    </Text>
+                    <Text fz={12}>{type==='import'?depart.adresse:livraison.adresse}</Text>
+                    <Text fz={12}>{type==='import'?'Date de création '+depart.date:'Date de livraison '+livraison.date}</Text>
 
                 </Box>
 
-                <div style={{ display: 'flex', justifyContent: 'space-between', maxHeight: '90px', overflow: 'hidden' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                     <Box>
-                        <Typography variant="subtitle1" component={'small'} sx={{ color: 'GrayText', diplay: 'block' }} >CHU LA REUNION-HOSPITAL FELIX GUYON</Typography>
-                        <br />
-                        <Typography variant="subtitle2" component={'small'} sx={{ color: 'GrayText' }}>770534908919
-                            {(!notify ? (<IconButton onClick={() => setNotify(!notify)} > <NotificationsNone fontSize={'small'} /></IconButton>) : (
-                                <IconButton onClick={() => setNotify(!notify)} ><Notifications fontSize={'small'} color={'primary'} />  </IconButton>
-                            ))
-
-                            }
-
-                            {(!favorite ? (<IconButton onClick={() => setFavorite(!favorite)} ><StarBorder fontSize={'small'} /> </IconButton>
-                            ) : (
-                                <IconButton onClick={() => setFavorite(!favorite)} ><StarRate fontSize={'small'} color={'primary'} /> </IconButton>
-                            ))
-
-                            }
-                        </Typography>
-                        <Typography variant="body2" component={'h3'} sx={{ color: 'GrayText' }}>VILLEPINTE, 99 FR à ST DENIS RE</Typography>
-                        <Typography variant="subtitle2" component={'strong'} >Livraison mise à jour lun 28 nov 2022 avant 6:00pm</Typography>
-
+                        <Text fw={400} fz={12} >{service}</Text>
+                        <Text fz={12}>{numero}</Text>
                     </Box>
                     <Box style={{ display: 'flex', justifyContent: 'space-between', gap: 5 }}>
                         <Box onClick={() => setNotify(!notify)} className={'buttonhover'} sx={{ backgroundColor: 'black', color: 'white', display: 'flex', alignItems: 'center' }}>
@@ -98,7 +84,7 @@ function TousElement(props) {
                 </div>
             </SwipeableViews>
 
-            <hr style={{ marginY: 2 }} />
+            <Divider my={5} />
         </div>
     );
 }

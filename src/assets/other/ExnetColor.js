@@ -1,5 +1,6 @@
 const couleur = {
-    parisColor:'#BA9964',
+    parisColor:'#ECECEC',
+    // '#BA9964',
     medicalColor:'#098721'
 }
 

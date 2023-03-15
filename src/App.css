@@ -22,3 +22,113 @@ label{
 button:checked{
   color:red;
 }
+
+.paris2-bg,.paris2-bg:hover{
+  background:#f3f3f3;
+  }
+  
+  
+  .button-bg,.button-bg:hover{
+    background:#505050;
+  }
+  .paris-dark,.paris-dark:hover{
+    background:#ECECEC;
+    }
+  
+    .paris-dark-color{
+      color:#505050;
+      }
+  
+  
+  .paris-bg {
+    background: #BA9964;
+  }
+  
+  
+  .paris-bg2 {
+    background: #BA9964;
+    height: max-content;
+    overflow-y: scroll;
+  }
+  
+  .medical-bg {
+    background: #098721;
+  }
+  
+  
+  .paris-color {
+    color: #BA9964;
+  }
+  
+  .medical-color {
+    color: #098721;
+  }
+  
+  .other-bg{
+    background:#dadce0
+  }
+  
+  
+  .mantine-1g14e8k, .mantine-titt6i, .rightSection {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+  }
+  
+  .mantine-1rzga8z {
+    border-top: none !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+  }
+  
+  
+  .mantine-u01tz4:checked, .mantine-1wjygiw:checked {
+    background: #BA9964 !important;
+    border-color: #BA9964 !important;
+  }
+  
+  
+  
+  .ArrierePlan,.ArrierePlan:hover
+  {
+    background-color: #505050 !important;
+    color:#fff !important;
+    border-radius: 30 px !important;
+  }
+  
+  .ArrierePlanNeutre,.ArrierePlanNeutre:hover
+  {
+    background-color: #000;
+    color:#f3f3f3;
+  }
+  
+  
+  .ArrierePlanNeutre2,.ArrierePlanNeutre2:hover
+  {
+    background-color: #f3f3f3 !important;
+    color:#000 !important;
+  }
+
+
+  .activePage{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    display: block;
+    flex-direction: row;
+    /* border-radius:100px; */
+    border:1px solid #fff;
+    background-color: #fff;
+    padding:3px
+  }
+
+  .NotActivePage{
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    display: block;
+    flex-direction: row;
+   
+  }

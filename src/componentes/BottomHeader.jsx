@@ -1,9 +1,10 @@
-import { AccessTime, Add, FilterNone, Person } from '@mui/icons-material';
-import { AppBar, Box, Fab, styled, Toolbar, Stack, Collapse, Container, SwipeableDrawer } from '@mui/material';
+
+import { AppBar, Box, Fab, styled, Toolbar, Stack, Collapse, Container, } from '@mui/material';
 import React, { useState } from 'react';
 import couleur from './../assets/other/ExnetColor';
-import { Link } from 'react-router-dom';
-import { IconAlertCircle, IconCalculator, IconList, IconPackage, IconSearch, IconSettings, IconTimeline } from '@tabler/icons';
+import { Link, useLocation } from 'react-router-dom';
+import { IconCar, IconBookmark, IconChevronDown, IconChevronUp, IconPackage, IconPrinter, IconSettings, IconNotebook, IconShipOff, IconTimeline } from '@tabler/icons';
+import { useLayoutEffect } from 'react';
 
 
 function BottomHeader(props) {
@@ -11,6 +12,8 @@ function BottomHeader(props) {
     const [open, setOpen] = useState(false);
     const [affichage, setAffichage] = useState('block');
     const [taille, setTaille] = useState('auto');
+    const [activeLink, setactiveLink] = useState('/dashboard');
+    const location = useLocation();
 
 
     const StyledFab = styled(Fab)({
@@ -21,7 +24,7 @@ function BottomHeader(props) {
         right: 0,
         margin: '0 auto',
         color: 'black',
-        backgroundColor: 'white',
+        backgroundColor: '#ececec',
     });
 
 
@@ -60,20 +63,28 @@ function BottomHeader(props) {
         }
     }
 
+    useLayoutEffect(() => {
+        setactiveLink(location.pathname)
+    })
+
     return (
         <>
-            <AppBar position="fixed" paddingY={20} sx={{ top: 'auto', bottom: 0, backgroundColor: couleur.parisColor, height: taille }}>
+            <AppBar position="fixed" paddingY={20} sx={{ top: 'auto', bottom: 0, backgroundColor: couleur.parisColor, height: taille, color: '#000' }}>
                 <Toolbar>
                     <Container sx={{ display: affichage }}>
                         <Stack direction={'row'} spacing={1} sx={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Link to="/expedier" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
+                            <Link to="/dashboard" className={activeLink === '/dashboard' ? 'activePage' : 'NotActivePage'} >
                                 <IconPackage />
-                                expédier
+                                <span style={{ fontSize: 11, display: 'block' }}>DASHBOARD</span>
                             </Link>
-                            <Link to="/tarif" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+                            <Link to="/export" className={activeLink === '/export' ? 'activePage' : 'NotActivePage'} >
+                                <IconPrinter />
+                                <span style={{ fontSize: 11, display: 'block' }}>EXPORT</span>
+                            </Link>
+                            {/* <Link to="/tarif" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
                                 <IconCalculator />
                                 TARIFS
-                            </Link>
+                            </Link> */}
                         </Stack>
                     </Container>
 
@@ -82,19 +93,28 @@ function BottomHeader(props) {
                     // onClick={() => setOpen(!open)}
                     // onClick={toggleDrawer('bottom', true)}
                     >
-                        <Add />
+                        {/* <Add /> */}
+                        {open ? <IconChevronDown /> : <IconChevronUp />}
                     </StyledFab>
                     <Box sx={{ flexGrow: 1, display: affichage }} />
                     <Container sx={{ display: affichage }}>
                         <Stack direction={'row'} spacing={1} sx={{ alignItems: 'center', justifyContent: 'center' }}>
-                            <Link to="/enlevement" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
+                            <Link to="/import" className={activeLink === '/import' ? 'activePage' : 'NotActivePage'} >
+                                <IconNotebook />
+                                <span style={{ fontSize: 11, display: 'block' }}>IMPORT</span>
+                            </Link>
+                            <Link to="/course" className={activeLink === '/course' ? 'activePage' : 'NotActivePage'} >
+                                <IconCar />
+                                <span style={{ fontSize: 11, display: 'block' }}>COURSES A COURSES</span>
+                            </Link>
+                            {/* <Link to="/enlevement" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
                                 <AccessTime />
                                 Enlèvement
                             </Link>
                             <Link to="/expeditions" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
                                 <IconList />
                                 livrer
-                            </Link>
+                            </Link> */}
                         </Stack>
 
                     </Container>
@@ -104,9 +124,26 @@ function BottomHeader(props) {
                 <Collapse in={open} timeout="auto" unmountOnExit>
 
                     <Stack direction={'row'} spacing={3} sx={{ alignItems: 'center', justifyContent: 'center' }}>
-                        <Link to="/expedier" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
+
+                        <Link to="/dashboard" className={activeLink === '/dashboard' ? 'activePage' : 'NotActivePage'} >
                             <IconPackage />
-                            EXPEDIER
+                            <span style={{ fontSize: 11, display: 'block' }}>DASHBOARD</span>
+                        </Link>
+                        <Link to="/export" className={activeLink === '/export' ? 'activePage' : 'NotActivePage'} >
+                            <IconPrinter />
+                            <span style={{ fontSize: 11, display: 'block' }}>EXPORT</span>
+                        </Link>
+                        <Link to="/import" className={activeLink === '/import' ? 'activePage' : 'NotActivePage'} >
+                            <IconNotebook />
+                            <span style={{ fontSize: 11, display: 'block' }}>IMPORT</span>
+                        </Link>
+                        <Link to="/course" className={activeLink === '/course' ? 'activePage' : 'NotActivePage'} >
+                            <IconCar />
+                            <span style={{ fontSize: 11, display: 'block' }}>COURSES A COURSES</span>
+                        </Link>
+                        {/* <Link to="/expedier" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', display: 'block', flexDirection: 'row' }} >
+                            <IconPackage />
+                            <span style={{ fontSize: 11, display: 'block' }}>DASHBOARD</span>
                         </Link>
                         <Link to="/tarif" style={{ textDecoration: 'none', color: 'white', textAlign: 'center' }} >
                             <IconCalculator />
@@ -119,11 +156,26 @@ function BottomHeader(props) {
                         <Link to="/expeditions" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
                             <IconList />
                             livrer
-                        </Link>
+                        </Link> */}
                     </Stack>
 
                     <Stack direction={'row'} spacing={4} sx={{ gap: 1, alignItems: 'center', justifyContent: 'center', marginY: '20px' }}>
-                        <Link to="/expeditions-archive" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
+
+                        <Link to="/archive" className={activeLink === '/archive' ? 'activePage' : 'NotActivePage'} >
+                            <IconShipOff />
+                            <span style={{ fontSize: 11, display: 'block', textTransform: 'uppercase' }}> expéditions archivées</span>
+                        </Link>
+                        <Link to="/carnet" className={activeLink === '/carnet' ? 'activePage' : 'NotActivePage'} >
+                            <IconBookmark />
+                            <span style={{ fontSize: 11, display: 'block', textTransform: 'uppercase' }}>Carnet d'adresse</span>
+                        </Link>
+                        <Link to="/parametre" className={activeLink === '/parametre' ? 'activePage' : 'NotActivePage'} >
+                            <IconSettings />
+                            <span style={{ fontSize: 11, display: 'block' }}>PARAMETRE</span>
+                        </Link>
+
+
+                        {/* <Link to="/expeditions-archive" style={{ textDecoration: 'none', color: 'white', textAlign: 'center', textTransform: 'uppercase' }} >
                             <IconList />
                             <br />
                             expéditions archivées
@@ -138,7 +190,7 @@ function BottomHeader(props) {
                             <IconSettings />
                             <br />
                             PARAMETRE
-                        </Link>
+                        </Link> */}
 
                     </Stack>
                 </Collapse>

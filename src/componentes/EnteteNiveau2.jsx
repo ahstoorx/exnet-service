@@ -13,13 +13,13 @@ function EnteteNiveau2({ libelle, children }) {
         <div style={{ width: "100%", position: 'fixed', zIndex: 1000000, top: 0, bottom: 'auto', backgroundColor: couleur.parisColor, color: 'white' }}>
             <Stack direction={'row'} spacing={3}
                 sx={{ paddingTop: '33px',paddingBottom: '7px', alignItems: 'center', justifyContent: 'center' }}>
-                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center' }} onClick={() => navigation(-1)}>
+                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center',color:'black' }} onClick={() => navigation(-1)}>
                     <ArrowBackIos />
                 </Box>
-                <Box flex={6} sx={{ display: 'flex', justifyContent: 'center' }}>
+                <Box flex={6} sx={{ display: 'flex', justifyContent: 'center',color:'black' }}>
                     {libelle}
                 </Box>
-                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center' }} onClick={() => navigation('/')} >
+                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center',color:'black' }} onClick={() => navigation('/')} >
                     <Home />
                 </Box>
             </Stack>
