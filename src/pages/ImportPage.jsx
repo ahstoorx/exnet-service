@@ -6,8 +6,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import couleur from './../assets/other/ExnetColor.js';
 import MenuCentral from '../componentes/MenuCentral.jsx';
 import BottomHeader from '../componentes/BottomHeader.jsx';
-import { Group } from '@mantine/core';
+import { Container, Group } from '@mantine/core';
 import { useToggle } from '@mantine/hooks';
+import NewImportPage from './NewImportPage.jsx';
 
 
 function ImportPage(props) {
@@ -35,12 +36,12 @@ function ImportPage(props) {
                 <Box flex={6} sx={{ display: 'flex', justifyContent: 'center', textTransform: 'uppercase', color: 'black' }}>
                     IMPORTS
                 </Box>
-                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center', color: 'black' }} onClick={() => navigation('/')} >
+                <Box flex={1} sx={{ display: 'flex', justifyContent: 'center', color: 'black' }} onClick={() => navigation('/dashboard')} >
                     <Home />
                 </Box>
             </Stack>
-            <Box style={{ zIndex: 999999999, position: 'fixed',top:83, paddingInline: 'auto', marginInline: 'auto',background:'#fff',width:'100%' }}>
-                <Group position={'center'} my={15} style={{width:'100%'}} >
+            <Box style={{ zIndex: 999999999, position: 'fixed', top: 83, paddingInline: 'auto', marginInline: 'auto', background: '#fff', width: '100%' }}>
+                <Group position={'center'} my={15} style={{ width: '100%' }} >
                     <span style={{ display: "flex", background: '#f3f3f3', padding: 0, borderRadius: 12 }}>
                         <Button
 
@@ -79,8 +80,18 @@ function ImportPage(props) {
                     </span>
                 </Group>
             </Box>
+            <Box >
+                {actionType === "liste" ? (
+                    <> <MenuCentral type={'import'} /></>
+                ) : (
+                    <div style={{ marginTop: '115px' }}>
+                        <div style={{ marginBottom: '170px' }}>
+                            <NewImportPage />
+                        </div>
+                    </div>
+                )}
+            </Box>
 
-            <MenuCentral type={'import'} />
 
             <BottomHeader />
             {/* <div style={{ bottom: 0, top: 'auto', position: 'fixed', width: '100%' }} >

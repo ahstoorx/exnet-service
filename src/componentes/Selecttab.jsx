@@ -59,8 +59,8 @@ export default function Selecttab() {
 
 
   return (
-    <Box sx={{ bgcolor: 'background.paper', width: '100%', position: 'absolute', marginTop: '60px', bottom: 'auto', top: 50, marginBottom: '90px' }}>
-      <AppBar sx={{ top: '110px', marginBottom: '30px' }} >
+    <Box sx={{ bgcolor: 'background.paper', width: '100%', position: 'absolute', marginTop: '60px', bottom: 'auto', top: 130, marginBottom: '90px' }}>
+      <AppBar sx={{ top: 180, marginBottom: '30px' }} >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -70,10 +70,9 @@ export default function Selecttab() {
           aria-label="full width tabs example"
           style={{ backgroundColor: '#ececec', color: 'black' }}
         >
-          <Tab label="Tous" {...a11yProps(0)} />
-          <Tab label="A moi" {...a11yProps(1)} />
-          <Tab label="De moi" {...a11yProps(2)} />
-          <Tab label="Surveiller" {...a11yProps(3)} />
+          <Tab label="En cours" {...a11yProps(0)} />
+          <Tab label="Livrées" {...a11yProps(1)} />
+          <Tab label="Toutes" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
 
@@ -101,14 +100,6 @@ export default function Selecttab() {
 
         }
       </TabPanel>
-      <TabPanel value={value} index={3} dir={theme.direction} style={{ paddingTop: '35px' }}>
-        {surveillezListe.map(item => (
-          <TousElement type={'surveillez'} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
-        ))
-
-        }
-      </TabPanel>
-
     </Box>
   );
 }

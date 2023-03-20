@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import MonSteper from '../componentes/MonSteper';
 import { useState } from 'react';
 import { Calendar, TimeInput } from '@mantine/dates';
+import { UnserInformation } from '../expeditionsData/UnserInformation';
 
 
 
@@ -41,22 +42,11 @@ function NewExportPage(props) {
     return (
         <>
 
-            <Box className='paris-dark' pb={70} pt={20} mb={20} >
-                <Container >
-                    <Group >
-                        <IconArrowLeft size={20} className='paris-dark-color' onClick={() => navigate(-1)} />
-                        <Box ml={"20vw"}>
-                            <Text fz={20} className='paris-dark-color' >{Tableau[niveau]}</Text>
-                        </Box>
-                    </Group>
-
-                </Container>
-            </Box>
+           
 
             <Box
                 sx={{
                     paddingTop: 40,
-                    marginTop: '-6vh',
                     paddingBottom: 40,
                     backgroundColor: '#fff',
                     borderRadius: '32px 32px 0 0',
@@ -103,7 +93,7 @@ function NewExportPage(props) {
                             />
 
                             <Group position={'apart'} mt={20}>
-                                <Text fz={'sm'} >Enregistrer en tant que nouvel destinataire</Text>
+                                <Text fz={'xs'} >Enregistrer en tant que nouvel destinataire</Text>
                                 <Switch checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
                             </Group>
 
@@ -140,16 +130,17 @@ function NewExportPage(props) {
                             </Group>
                         </>
                     ) : (<>
-                        <TextInput my={8} variant={'filled'} placeholder='Nom' />
-                        <TextInput my={8} variant={'filled'} placeholder="Nom de l'entreprise" />
-                        <TextInput my={8} variant={'filled'} placeholder='Pays/Territoire' />
-                        <TextInput my={8} variant={'filled'} placeholder='Adresse 1' />
-                        <TextInput my={8} variant={'filled'} placeholder='Adresse 2' />
-                        <TextInput my={8} variant={'filled'} placeholder='Code Postal' />
-                        <TextInput my={8} variant={'filled'} placeholder='Ville' />
-                        <TextInput my={8} variant={'filled'} placeholder='Téléphone 1' />
-                        <TextInput my={8} variant={'filled'} placeholder='Téléphone 2' />
-                        <TextInput my={8} variant={'filled'} placeholder='Email' type={'email'} />
+                        <TextInput my={8} variant={'filled'} placeholder='Nom' value={UnserInformation.fullname} />
+                            <TextInput my={8} variant={'filled'} placeholder="Nom de l'entreprise" value={UnserInformation.entreprise} />
+                            <TextInput my={8} variant={'filled'} placeholder='Pays/Territoire' value={UnserInformation.pays} />
+                            <TextInput my={8} variant={'filled'} placeholder='Adresse 1' value={UnserInformation.adresse} />
+                            <TextInput my={8} variant={'filled'} placeholder='Adresse 2' value={UnserInformation.adresse2}/>
+                            <TextInput my={8} variant={'filled'} placeholder='Code Postal' value={UnserInformation.code} />
+                            <TextInput my={8} variant={'filled'} placeholder='Ville' value={UnserInformation.vile} />
+                            <TextInput my={8} variant={'filled'} placeholder='Téléphone 1' value={UnserInformation.telephone} />
+                            <TextInput my={8} variant={'filled'} placeholder='Téléphone 2' value={UnserInformation.telephone2} />
+                            <TextInput my={8} variant={'filled'} placeholder='Email' type={'email'} value={UnserInformation.email}/>
+                        
                         <Select
                             ariant={'filled'}
                             placeholder="Detail"
@@ -183,7 +174,7 @@ function NewExportPage(props) {
 
 
                         <Group position={'apart'} mt={20}>
-                            <Text fz={'sm'} >Enregistrer en tant que nouvel expéditeur</Text>
+                            <Text fz={'xs'} >Enregistrer en tant que nouvel expéditeur</Text>
                             <Switch checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
                         </Group>
 

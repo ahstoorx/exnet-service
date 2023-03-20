@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import MonSteper from '../componentes/MonSteper';
 import { useState } from 'react';
 import { Calendar, TimeInput } from '@mantine/dates';
+import { UnserInformation } from '../expeditionsData/UnserInformation';
 
 
 
@@ -13,7 +14,6 @@ const Tableau = ['','Enlèvement','Livraison',"Nombre de Colis"];
 
 
 function NewImportPage(props) {
-
     const navigate = useNavigate();
     const [opened, setOpened] = useState(false);
     const [opened_2, setOpened_2] = useState(false);
@@ -31,7 +31,8 @@ function NewImportPage(props) {
             let jour = value.getDate()
             console.log([an, mois, jour])
             let date = jour + '/' + mois + '/' + an;
-            setdate(date)
+            setdate(date);
+            setOpened(false)
 
 
         }
@@ -41,22 +42,9 @@ function NewImportPage(props) {
     return (
         <>
 
-            <Box className='paris-dark' pb={70} pt={20} mb={20} >
-                <Container >
-                    <Group >
-                        <IconArrowLeft size={20} className='paris-dark-color' onClick={() => navigate(-1)} />
-                        <Box ml={"20vw"}>
-                            <Text fz={20} className='paris-dark-color' >{Tableau[niveau]}</Text>
-                        </Box>
-                    </Group>
-
-                </Container>
-            </Box>
-
             <Box
                 sx={{
                     paddingTop: 40,
-                    marginTop: '-6vh',
                     paddingBottom: 40,
                     backgroundColor: '#fff',
                     borderRadius: '32px 32px 0 0',
@@ -70,16 +58,16 @@ function NewImportPage(props) {
                 <Container>
                     {niveau === 2 ? (
                         <>
-                            <TextInput my={8} variant={'filled'} placeholder='Nom' />
-                            <TextInput my={8} variant={'filled'} placeholder="Nom de l'entreprise" />
-                            <TextInput my={8} variant={'filled'} placeholder='Pays/Territoire' />
-                            <TextInput my={8} variant={'filled'} placeholder='Adresse 1' />
-                            <TextInput my={8} variant={'filled'} placeholder='Adresse 2' />
-                            <TextInput my={8} variant={'filled'} placeholder='Code Postal' />
-                            <TextInput my={8} variant={'filled'} placeholder='Ville' />
-                            <TextInput my={8} variant={'filled'} placeholder='Téléphone 1' />
-                            <TextInput my={8} variant={'filled'} placeholder='Téléphone 2' />
-                            <TextInput my={8} variant={'filled'} placeholder='Email' type={'email'} />
+                            <TextInput my={8} variant={'filled'} placeholder='Nom' value={UnserInformation.fullname} />
+                            <TextInput my={8} variant={'filled'} placeholder="Nom de l'entreprise" value={UnserInformation.entreprise} />
+                            <TextInput my={8} variant={'filled'} placeholder='Pays/Territoire' value={UnserInformation.pays} />
+                            <TextInput my={8} variant={'filled'} placeholder='Adresse 1' value={UnserInformation.adresse} />
+                            <TextInput my={8} variant={'filled'} placeholder='Adresse 2' value={UnserInformation.adresse2}/>
+                            <TextInput my={8} variant={'filled'} placeholder='Code Postal' value={UnserInformation.code} />
+                            <TextInput my={8} variant={'filled'} placeholder='Ville' value={UnserInformation.vile} />
+                            <TextInput my={8} variant={'filled'} placeholder='Téléphone 1' value={UnserInformation.telephone} />
+                            <TextInput my={8} variant={'filled'} placeholder='Téléphone 2' value={UnserInformation.telephone2} />
+                            <TextInput my={8} variant={'filled'} placeholder='Email' type={'email'} value={UnserInformation.email}/>
 
                             <TextInput
                                 my={8}
@@ -103,7 +91,7 @@ function NewImportPage(props) {
                             />
 
                             <Group position={'apart'}>
-                                <Text fz={'sm'} >Enregistrer en tant que nouvel destinataire</Text>
+                                <Text fz={'xs'} >Enregistrer en tant que nouvel destinataire</Text>
                                 <Switch checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
                             </Group>
 
@@ -117,14 +105,14 @@ function NewImportPage(props) {
                         </>
                     ) : (niveau === 3 ? (
                         <>
-                            <TextInput my={8} variant={'filled'} placeholder='Nombre de colis' />
-                            <TextInput my={8} variant={'filled'} placeholder="Poids" />
-                            <TextInput my={8} variant={'filled'} placeholder='Informations colis' />
-                            <TextInput my={8} variant={'filled'} placeholder='Poids volumétrique' />
-                            <TextInput my={8} variant={'filled'} placeholder='Longueur' />
-                            <TextInput my={8} variant={'filled'} placeholder='Largeur' />
-                            <TextInput my={8} variant={'filled'} placeholder='Hauteur' />
-                            <Textarea my={8} variant={'filled'} placeholder='Description' />
+                            <TextInput my={8} variant={'filled'} placeholder='Nombre de colis' value={''} />
+                            <TextInput my={8} variant={'filled'} placeholder="Poids"  value={''}/>
+                            <TextInput my={8} variant={'filled'} placeholder='Informations colis' value={''} />
+                            <TextInput my={8} variant={'filled'} placeholder='Poids volumétrique' value={''} />
+                            <TextInput my={8} variant={'filled'} placeholder='Longueur' value={''} />
+                            <TextInput my={8} variant={'filled'} placeholder='Largeur' value={''} />
+                            <TextInput my={8} variant={'filled'} placeholder='Hauteur' value={''} />
+                            <Textarea my={8} variant={'filled'} placeholder='Description' value={''} />
                             <FileInput my={8}
                                 accept="image/png,image/jpeg"
                                 iconWidth={150}
@@ -177,7 +165,7 @@ function NewImportPage(props) {
                         />
 
                         <Group position={'apart'}>
-                            <Text fz={'sm'} >Enregistrer en tant que nouvel expéditeur</Text>
+                            <Text fz={'xs'} >Enregistrer en tant que nouvel expéditeur</Text>
                             <Switch checked={checked} onChange={(event) => setChecked(event.currentTarget.checked)} />
                         </Group>
 
@@ -201,7 +189,7 @@ function NewImportPage(props) {
                 centered
                 opened={opened}
                 onClose={() => setOpened(false)}
-                title="Introduce yourself!"
+                title="Selectionner une date"
             >
                 {/* Modal content */}
                 <Calendar value={value} onChange={setValue} labelFormat="MM/YYYY" />

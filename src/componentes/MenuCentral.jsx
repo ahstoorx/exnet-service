@@ -45,7 +45,7 @@ function a11yProps(index) {
   };
 }
 
-export default function MenuCentral({type}) {
+export default function MenuCentral({ type }) {
   const theme = useTheme();
   const [value, setValue] = React.useState(0);
 
@@ -57,7 +57,7 @@ export default function MenuCentral({type}) {
 
   return (
     <Box sx={{ bgcolor: 'background.paper', width: '100%', position: 'sticky', marginTop: '10px', bottom: 'auto', top: 50, marginBottom: '90px' }}>
-      <AppBar sx={{ top: '110px', marginBottom: '170px',top:150 }} >
+      <AppBar sx={{ top: '110px', marginBottom: '170px', top: 150 }} >
         <Tabs
           value={value}
           onChange={handleChange}
@@ -68,21 +68,19 @@ export default function MenuCentral({type}) {
           style={{ backgroundColor: '#ececec', color: 'black' }}
         >
           <Tab label="En cours" {...a11yProps(0)} />
-          <Tab label="Livrée" {...a11yProps(1)} />
+          <Tab label="Livrées" {...a11yProps(1)} />
           <Tab label="Toutes" {...a11yProps(2)} />
-         
+
         </Tabs>
       </AppBar>
 
       <TabPanel value={value} index={0} dir={theme.direction} style={{ paddingTop: '180px' }}>
         {allExpedition.map((item, index) => (
-          <TousElement type={'tout'} key={index} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
+          <TousElement type={type} key={index} numero={item.numero} service={item.societe} depart={item.depart} livraison={item.livraison} />
         ))
 
         }
-        {
-          allExpedition.length
-        }
+
       </TabPanel>
       <TabPanel value={value} index={1} dir={theme.direction} style={{ paddingTop: '180px' }}>
         {importData.map((item, index) => (
@@ -98,7 +96,7 @@ export default function MenuCentral({type}) {
 
         }
       </TabPanel>
-      
+
 
     </Box>
   );

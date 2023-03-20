@@ -37,7 +37,7 @@ function App() {
         <Route path={"/information-colis"} element={<InformationColisPage />} />
         <Route path={"/expedier"} element={<ExpedierPage />} />
         <Route path={"/details"} element={<DetailsPage />} />
-        <Route path={"/tracking"} element={<RecaputilatifSuiviPage />} />
+        <Route path={"/tracking/:type/:identifiant"} element={<RecaputilatifSuiviPage />} />
         <Route path={"/enlevement"} element={<EnlevementPage />} />
         <Route path={"/export"} element={<ExportPage />} />
         <Route path={"/course"} element={<CoursePage />} />

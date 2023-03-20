@@ -43,7 +43,7 @@ function TousElement({type,numero,service,depart,livraison}) {
                 style={{paddingTop: '0px' }}
             >
                 <Box onClick={() => changeNumber()}>
-                <Link to={'/tracking'} style={{textDecoration:'none' }}>
+                <Link to={`/tracking/${type}/${numero}`} style={{textDecoration:'none' }}>
                     <Text fw={500} fz={12} >{service}</Text></Link>
                     <Text fz={12}>{numero}
                         {(!notify ? (<IconButton onClick={() => setNotify(!notify)} > <NotificationsNone fontSize={'small'} /></IconButton>) : (

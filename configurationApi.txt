@@ -1,0 +1,31 @@
+Dans le fichier Routing.php
+
+public function options(){
+
+        $this->router->options('/toto/connexion/user', 'api_user_connexion', function (Request $req, Response $res) {
+            // (new ApiController($req,$res))->userConnexion();
+            var_dump($req);
+            $this->isfound = true;
+        },['*'],$this->sync_url);
+    }
+
+Sans oublier de définis les attributs options dans la mathode run et sync
+
+
+
+
+Dans le fichier Router.php 
+
+
+    public function options($app_route, $app_name, $app_callback, $arr_roles, $sync = false)
+    {
+        if ($sync){
+            $method = 'options';
+            $this->addSync($app_route, $app_name, $method);
+        }else {
+            if (strcasecmp($_SERVER['REQUEST_METHOD'], 'OPTIONS') !== 0) {
+                return;
+            }
+            $this->on($app_route, $app_name, $app_callback, $arr_roles);
+        }
+    }

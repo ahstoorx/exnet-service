@@ -1,20 +1,18 @@
-import { Box, Container, Group, Text } from '@mantine/core';
+import { Box, Button, Container, Group, Text } from '@mantine/core';
 import { IconArrowLeft } from '@tabler/icons';
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import EnlevementCardComponent from '../componentes/EnlevementCardComponent';
-import LivraisonCardComponent from '../componentes/LivraisonCardComponent';
-import ColisComponentCard from '../componentes/ColisComponentCard';
+import EnlevementCardComponent from '../component/EnlevementCardComponent';
+import LivraisonCardComponent from '../component/LivraisonCardComponent';
+import ColisComponentCard from '../component/ColisComponentCard';
 import { listeExpeditions } from '../expeditionsData/listeExpeditions';
 import { useToggle } from '@mantine/hooks';
 import { trackingListe } from '../expeditionsData/trackingListe';
-import AcheminementDetail from '../componentes/AcheminementDetail';
-import { importData } from '../expeditionsData/importData';
+import AcheminementDetail from '../component/AcheminementDetail';
 import { courseData } from '../expeditionsData/courseData';
-import { allExpedition } from '../expeditionsData/allExpedition';
+import { importData } from '../expeditionsData/importData';
 
-
-function RecaputilatifSuiviPage(props) {
+function DetailPage(props) {
     const navigate = useNavigate();
     const [expedition, setExpedition] = useState(false)
     const { type, identifiant } = useParams();
@@ -22,7 +20,7 @@ function RecaputilatifSuiviPage(props) {
     const [expTracking, setExpTracking] = useState([])
 
     useEffect(() => {
-        let element = (type === 'courses' ? courseData : (type === 'import' ? importData : (type === 'export' ? listeExpeditions : allExpedition)))
+        let element = (type === 'courses' ? courseData : (type === 'import' ? importData : (type === 'export' ? listeExpeditions : [])))
         let colis = element.filter((item) => item.numero == identifiant)[0]
         setExpedition({ ...colis });
         console.log(identifiant);
@@ -35,19 +33,7 @@ function RecaputilatifSuiviPage(props) {
     return (
         <>
 
-            <Box className='paris-dark' pb={50} pt={20} 
-            
-            style={{
-                zIndex: 100000000,
-                width: '100%',
-                position: 'fixed',
-                top: 0, bottom: 'auto',
-                paddingY: '30px',
-                alignItems: 'center',
-                justifyContent: 'center',
-                marginBottom:100,
-                maginBottom:200
-            }}>
+            <Box className='paris-dark' pb={50} pt={20}  >
                 <Container >
                     <Group >
                         <IconArrowLeft size={20} className='paris-dark-color' onClick={() => navigate(-1)} />
@@ -62,11 +48,11 @@ function RecaputilatifSuiviPage(props) {
 
             <Box
                 sx={{
-                    top:150,
-                    position:'absolute',
                     paddingTop: 40,
+                    marginTop: '-4.5vh',
                     paddingBottom: 40,
                     backgroundColor: '#fff',
+                    borderRadius: '32px 32px 0 0',
                 }}>
 
 
@@ -92,4 +78,4 @@ function RecaputilatifSuiviPage(props) {
     );
 }
 
-export default RecaputilatifSuiviPage;
+export default DetailPage;
